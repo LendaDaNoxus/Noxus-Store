@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noxus Store - Sua Loja de Produtos</title>
+    <link rel="icon" href="https://cdn.ereemby.com/attachments/17624761158193205imagem.png" type="image/png">
+    
+    <style>
+        :root {
+            --cor-fundo-principal: #0a0a0a; --cor-roxo-claro: #9333ea; --cor-roxo-escuro: #6b21a8;
+            --cor-texto-principal: #ffffff; --cor-texto-secundario: #a0a0a0; --espacamento-padrao: 20px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: var(--cor-fundo-principal); color: var(--cor-texto-principal); overflow-x: hidden; min-height: 100vh; display: flex; flex-direction: column; }
+        body::before {
+            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(147, 51, 234, 0.1) 0%, transparent 40%),
+                        radial-gradient(circle at 20% 80%, rgba(107, 33, 168, 0.15) 0%, transparent 50%);
+            animation: backgroundShift 20s infinite alternate ease-in-out; z-index: -1; overflow: hidden;
+        }
+        @keyframes backgroundShift { 0% { background-position: 0% 0%; } 100% { background-position: 100% 100%; } }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 var(--espacamento-padrao); width: 100%; }
+        .header { padding: var(--espacamento-padrao) 0; height: 80px; width: 100%; }
+        .header .container { display: flex; justify-content: flex-start; align-items: center; height: 100%; }
+        .logo-section { display: flex; align-items: center; text-decoration: none; color: var(--cor-texto-principal); }
+        .logo-section img { height: 40px; margin-right: 10px; }
+        .logo-section span { font-size: 1.8rem; font-weight: 700; }
+        .hero { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 50px var(--espacamento-padrao); }
+        .hero-tag { display: inline-flex; align-items: center; background-color: rgba(147, 51, 234, 0.15); border: 1px solid var(--cor-roxo-escuro); color: var(--cor-roxo-claro); padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: 500; margin-bottom: 30px; backdrop-filter: blur(5px); }
+        .hero-tag svg { margin-right: 8px; fill: var(--cor-roxo-claro); width: 20px; height: 20px; }
+        .hero h1 { font-size: 3.8rem; font-weight: 800; margin-bottom: 20px; line-height: 1.1; color: var(--cor-texto-principal); }
+        .hero p { font-size: 1.3rem; color: var(--cor-texto-secundario); margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto; }
+        .hero-buttons { display: flex; gap: var(--espacamento-padrao); justify-content: center; flex-wrap: wrap; }
+        .hero-button { padding: 15px 30px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; }
+        .hero-button.primary { background-color: var(--cor-roxo-claro); color: var(--cor-texto-principal); border: 1px solid var(--cor-roxo-claro); }
+        .hero-button.primary:hover { background-color: var(--cor-roxo-escuro); border-color: var(--cor-roxo-escuro); }
+        .hero-button.secondary { background-color: transparent; color: var(--cor-roxo-claro); border: 1px solid var(--cor-roxo-claro); }
+        .hero-button.secondary:hover { background-color: rgba(147, 51, 234, 0.1); color: var(--cor-roxo-claro); border-color: var(--cor-roxo-escuro); }
+        @media (max-width: 768px) {
+            .header { height: auto; padding: var(--espacamento-padrao) 0; }
+            .header .container { justify-content: center; align-items: center; }
+            .hero { padding: 30px var(--espacamento-padrao); }
+            .hero h1 { font-size: 2.8rem; }
+            .hero p { font-size: 1.1rem; }
+            .hero-buttons { flex-direction: column; gap: 15px; width: 100%; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 2.2rem; }
+            .hero-tag { font-size: 0.8rem; padding: 6px 12px; }
+            .logo-section img { height: 30px; }
+            .logo-section span { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo-section">
+                <img src="https://cdn.ereemby.com/attachments/17624761158193205imagem.png" alt="Noxus Store Logo">
+                <span>Noxus Store</span>
+            </a>
+        </div>
+    </header>
+    <main class="hero">
+        <div class="container">
+            <div class="hero-tag">
+                <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+                </svg>
+                <span>Conheça nossa nova coleção</span>
+            </div>
+            <h1>Noxus Store</h1>
+            <p>Seu destino para produtos exclusivos e de alta qualidade. Inovação e estilo ao seu alcance.</p>
+            <div class="hero-buttons">
+                <a href="produtos.html" class="hero-button primary">Começar Agora</a>
+                <a href="https://noxusstore.shop" class="hero-button secondary">Conheça a Loja</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
